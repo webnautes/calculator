@@ -1,0 +1,150 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.calculator {
+    background: #1c1c1c;
+    border-radius: 20px;
+    padding: 20px;
+    box-shadow:
+        0 20px 50px rgba(0, 0, 0, 0.5),
+        0 0 0 1px rgba(255, 255, 255, 0.1);
+    width: 320px;
+}
+
+.display {
+    background: #2d2d2d;
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 20px;
+    min-height: 100px;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: flex-end;
+    word-wrap: break-word;
+    word-break: break-all;
+}
+
+.previous-operand {
+    color: rgba(255, 255, 255, 0.5);
+    font-size: 1.2rem;
+    min-height: 24px;
+}
+
+.current-operand {
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 300;
+}
+
+.buttons {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 12px;
+}
+
+.btn {
+    border: none;
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    font-size: 1.5rem;
+    cursor: pointer;
+    transition: all 0.15s ease;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-weight: 400;
+}
+
+.btn:hover {
+    transform: scale(1.05);
+}
+
+.btn:active {
+    transform: scale(0.95);
+}
+
+.btn-number {
+    background: #505050;
+    color: white;
+}
+
+.btn-number:hover {
+    background: #6a6a6a;
+}
+
+.btn-operator {
+    background: #ff9f0a;
+    color: white;
+}
+
+.btn-operator:hover {
+    background: #ffb340;
+}
+
+.btn-clear {
+    background: #a5a5a5;
+    color: #1c1c1c;
+}
+
+.btn-clear:hover {
+    background: #c5c5c5;
+}
+
+.btn-equals {
+    background: #ff9f0a;
+    color: white;
+}
+
+.btn-equals:hover {
+    background: #ffb340;
+}
+
+.btn-zero {
+    grid-column: span 2;
+    width: 100%;
+    border-radius: 30px;
+    justify-content: flex-start;
+    padding-left: 24px;
+}
+
+/* 키보드 포커스 스타일 */
+.btn:focus {
+    outline: 2px solid #fff;
+    outline-offset: 2px;
+}
+
+/* 반응형 디자인 */
+@media (max-width: 360px) {
+    .calculator {
+        width: 280px;
+        padding: 15px;
+    }
+
+    .btn {
+        width: 50px;
+        height: 50px;
+        font-size: 1.3rem;
+    }
+
+    .buttons {
+        gap: 8px;
+    }
+
+    .current-operand {
+        font-size: 2rem;
+    }
+}
